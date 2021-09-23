@@ -15,7 +15,10 @@ class MainActivity : AppCompatActivity() {
         val input = findViewById<EditText>(R.id.input)
         val radioGroup = findViewById<RadioGroup>(R.id.radio)
         btn.setOnClickListener {
-            result.text = "${input.text} - ${
+            if(input.text.isBlank()){
+                Toast.makeText(this, "Введи запитання!", Toast.LENGTH_SHORT).show()
+            }
+            else result.text = "${input.text} - ${
                 findViewById<RadioButton>(radioGroup.checkedRadioButtonId).text
             }"
         }
