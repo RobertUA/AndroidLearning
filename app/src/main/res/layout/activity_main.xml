@@ -16,7 +16,7 @@
         android:hint="@string/Question"
         android:inputType="textPersonName"
         tools:ignore="TextContrastCheck,TextContrastCheck"
-        android:autofillHints="" />
+        android:importantForAutofill="no" />
 
     <RadioGroup
         android:id="@+id/radio"
@@ -47,6 +47,8 @@
     <TextView
         android:id="@+id/result"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
 
 </LinearLayout>

@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.*
 
 class MainActivity : AppCompatActivity() {
-    //@SuppressLint("SetTextI18n")
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,15 +19,17 @@ class MainActivity : AppCompatActivity() {
         btn.setOnClickListener {
             val id = radioGroup.checkedRadioButtonId
 
-            if(input.text.isBlank()){
-                Toast.makeText(this, "Заповни питання!", Toast.LENGTH_SHORT).show()
+            when {
+                input.text.isBlank() -> {
+                    Toast.makeText(this, "Заповни питання!", Toast.LENGTH_SHORT).show()
+                }
+                id == -1 -> {
+                    Toast.makeText(this, "Вибери відповідь!", Toast.LENGTH_SHORT).show()
+                }
+                else -> result.text = "${input.text} - ${
+                    findViewById<RadioButton>(id).text
+                }"
             }
-            else if(id == -1){
-                Toast.makeText(this, "Вибери відповідь!", Toast.LENGTH_SHORT).show()
-            }
-            else result.text = "${input.text} - ${
-                findViewById<RadioButton>(id).text
-            }"
         }
     }
 }
