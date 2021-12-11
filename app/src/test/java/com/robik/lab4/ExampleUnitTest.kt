@@ -1,4 +1,4 @@
-package com.robik.androidlearning
+package com.robik.lab4
 
 import org.junit.Test
 

@@ -1,8 +1,3 @@
 <resources>
-    <string name="app_name">Android Learning</string>
-    <string name="Yes">Так</string>
-    <string name="No">Ні</string>
-    <string name="Ok">ОК</string>
-    <string name="Question">Питання</string>
-    <string name="Open">Відкрити</string>
+    <string name="app_name">Lab4</string>
 </resources>
