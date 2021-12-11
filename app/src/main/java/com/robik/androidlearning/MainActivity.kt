@@ -15,16 +15,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btn = findViewById<Button>(R.id.button)
-        val btn2 = findViewById<Button>(R.id.button2)
         val input = findViewById<EditText>(R.id.input)
         val radioGroup = findViewById<RadioGroup>(R.id.radio)
 
         //FileUtils.clearFile(this, "lab3.txt")
 
-        btn2.setOnClickListener {
-            val intent = Intent(this, FileActivity::class.java)
-            startActivity(intent)
-        }
         btn.setOnClickListener {
             val id = radioGroup.checkedRadioButtonId
 
@@ -44,7 +39,6 @@ class MainActivity : AppCompatActivity() {
                     bundle.putString("result", text)
                     fragment1.arguments = bundle
                     supportFragmentManager.beginTransaction().replace(R.id.container, fragment1).commit() //.addToBackStack
-                    FileUtils.writeToFile(this, text, "lab3.txt")
                 }
             }
         }
